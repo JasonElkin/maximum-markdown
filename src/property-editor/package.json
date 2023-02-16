@@ -1,0 +1,23 @@
+{
+  "name": "maximum-markdown",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build"
+  },
+  "devDependencies": {
+    "@bytemd/plugin-breaks": "^1.20.2",
+    "@bytemd/plugin-frontmatter": "^1.20.2",
+    "@bytemd/plugin-gfm": "^1.20.2",
+    "@bytemd/plugin-highlight": "^1.20.2",
+    "@types/node": "^18.13.0",
+    "bytemd": "^1.20.2",
+    "lit": "^2.4.1",
+    "typescript": "^4.9.3",
+    "vite": "^4.0.0"
+  },
+  "dependencies": {
+    "@types/angular": "^1.8.3"
+  }
+}

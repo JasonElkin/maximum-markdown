@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+	<PropertyGroup>
+		<RootNamespace>Umbraco.Community.MaximumMarkdown.Backoffice</RootNamespace>
+		<TargetFramework>net6.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<StaticWebAssetBasePath>App_Plugins/MaximumMarkdown</StaticWebAssetBasePath>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Umbraco.Cms.Core" Version="[10.0.0,13.0]" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="wwwroot\assets\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\MaximumMarkdown.Core\MaximumMarkdown.Core.csproj" />
+	</ItemGroup>
+
+</Project>
