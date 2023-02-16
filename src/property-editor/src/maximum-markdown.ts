@@ -14,12 +14,21 @@ import { UmbracoPropertyEditor } from './umbraco-property-editor';
 
 const contentWrapper = document.getElementById('contentwrapper');
 
+const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
 @customElement('maximum-markdown-editor')
 export class MaximumMarkdownEditor extends UmbracoPropertyEditor {
+	constructor() {
+		super();
+		this.addEventListener('keydown', (e) => {
+			if (e.ctrlKey === e.metaKey === e.altKey === false && e.key in digits) {
+				e.stopPropagation();
+			}
+		})
+	}
 
 	@query('#editor')
 	private _editor!: HTMLDivElement;
-
 
 	private observer = new MutationObserver((m) => {
 		if ((<HTMLDivElement>m[0].target).classList.contains('bytemd-fullscreen')) {
