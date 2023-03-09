@@ -1,0 +1,68 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaximumMarkdown", "MaximumMarkdown\MaximumMarkdown.csproj", "{4A017666-894A-4655-A827-A3A75CE0D540}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaximumMarkdown.Backoffice", "MaximumMarkdown.Backoffice\MaximumMarkdown.Backoffice.csproj", "{467E7DAC-520E-4F6B-9B9D-7474F6379E38}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaximumMarkdown.Core", "MaximumMarkdown.Core\MaximumMarkdown.Core.csproj", "{8B92BCB7-0018-4C0D-90EF-48E88B4B8D78}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaximumMarkdown.PVC", "MaximumMarkdown.PVC\MaximumMarkdown.PVC.csproj", "{86A1B52B-A0EC-4F2C-AC81-F35DE69E9992}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "property-editor", "property-editor\", "{A7D9B198-9FEF-46F7-A115-FC19650A88C6}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_54190"
+		Debug.AspNetCompiler.PhysicalPath = "property-editor\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_54190\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_54190"
+		Release.AspNetCompiler.PhysicalPath = "property-editor\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_54190\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "54190"
+		SlnRelativePath = "property-editor\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4A017666-894A-4655-A827-A3A75CE0D540}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A017666-894A-4655-A827-A3A75CE0D540}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A017666-894A-4655-A827-A3A75CE0D540}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A017666-894A-4655-A827-A3A75CE0D540}.Release|Any CPU.Build.0 = Release|Any CPU
+		{467E7DAC-520E-4F6B-9B9D-7474F6379E38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{467E7DAC-520E-4F6B-9B9D-7474F6379E38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{467E7DAC-520E-4F6B-9B9D-7474F6379E38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{467E7DAC-520E-4F6B-9B9D-7474F6379E38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B92BCB7-0018-4C0D-90EF-48E88B4B8D78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B92BCB7-0018-4C0D-90EF-48E88B4B8D78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B92BCB7-0018-4C0D-90EF-48E88B4B8D78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B92BCB7-0018-4C0D-90EF-48E88B4B8D78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86A1B52B-A0EC-4F2C-AC81-F35DE69E9992}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86A1B52B-A0EC-4F2C-AC81-F35DE69E9992}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86A1B52B-A0EC-4F2C-AC81-F35DE69E9992}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86A1B52B-A0EC-4F2C-AC81-F35DE69E9992}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7D9B198-9FEF-46F7-A115-FC19650A88C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7D9B198-9FEF-46F7-A115-FC19650A88C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7D9B198-9FEF-46F7-A115-FC19650A88C6}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7D9B198-9FEF-46F7-A115-FC19650A88C6}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5564ACA1-3727-4F04-A0EC-C3714F04AB8C}
+	EndGlobalSection
+EndGlobal
