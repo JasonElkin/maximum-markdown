@@ -1,0 +1,17 @@
+{
+  "$schema": "https://marketplace.umbraco.com/umbraco-marketplace-schema.json",
+  "AuthorDetails": {
+    "Name": "Jason Elkin",
+    "Description": "Umbraco MVP & Master, developer at Bump Digital.",
+    "Url": "https://github.com/JasonElkin",
+    "ImageUrl": "https://github.com/JasonElkin.png",
+    "SyncContributorsFromRepository": true
+  },
+  "Category": "Editor Tools",
+  "Description": "A fully featured Markdown property editor.",
+  "LicenseTypes": [ "Free" ],
+  "IssueTrackerUrl": "https://github.com/JasonElkin/maximum-markdown/issues",
+  "PackageType": "Package",
+  "Tags": [ "markdown", "editor", "property editor", "backoffice" ],
+  "Title": "Maximum Markdown"
+}

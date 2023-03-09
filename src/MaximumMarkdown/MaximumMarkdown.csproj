@@ -1,15 +1,39 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <RootNamespace>Umbraco.Community.MaximumMarkdown</RootNamespace>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<RootNamespace>Umbraco.Community.MaximumMarkdown</RootNamespace>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\MaximumMarkdown.Backoffice\MaximumMarkdown.Backoffice.csproj" />
-    <ProjectReference Include="..\MaximumMarkdown.PVC\MaximumMarkdown.PVC.csproj" />
-  </ItemGroup>
+	<PropertyGroup>
+		<Description>The fully featured Markdown editor for Umbraco</Description>
+		<Authors>Jason Elkin</Authors>
+		<Copyright>Copyright © 2023 Jason Elkin</Copyright>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageProjectUrl>https://github.com/JasonElkin/maximum-markdown</PackageProjectUrl>
+		<PackageIcon>icon.png</PackageIcon>
+		<PackageIconUrl>https://raw.githubusercontent.com/JasonElkin/maximum-markdown/main/docs/img/logo.png</PackageIconUrl>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<RepositoryUrl>https://github.com/JasonElkin/maximum-markdown</RepositoryUrl>
+		<RepositoryType>Git</RepositoryType>
+		<PackageTags>umbraco umbraco-marketplace markdown</PackageTags>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<IncludeSymbols>true</IncludeSymbols>
+		<IncludeSource>true</IncludeSource>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<Title>Maximum Markdown</Title>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\MaximumMarkdown.Backoffice\MaximumMarkdown.Backoffice.csproj" />
+		<ProjectReference Include="..\MaximumMarkdown.PVC\MaximumMarkdown.PVC.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="icon.png" Pack="true" PackagePath="\" />
+		<None Include="..\..\README.md" Pack="true" PackagePath="\" />
+	</ItemGroup>
 
 </Project>
