@@ -18,10 +18,11 @@ internal class ManifestFilter : IManifestFilter
 		manifests.Add(new PackageManifest
 		{
 			PackageName = "Maximum Markdown",
-			Scripts = new[]
-			{
-		   $"/App_Plugins/MaximumMarkdown/{(_viteDevMode ? "dev-bootstrapper" : "assets/main")}.js"
-		}
-		});
-	}
+            Scripts = new[]
+            {
+               $"/App_Plugins/MaximumMarkdown/{(_viteDevMode ? "dev-bootstrapper" : "assets/main")}.js"
+            },
+            BundleOptions = BundleOptions.None
+        });
+    }
 }
