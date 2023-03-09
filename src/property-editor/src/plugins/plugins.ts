@@ -10,9 +10,7 @@ const corePlugins = [
 	breaks(),
 	frontmatter(),
 	highlight(),
-	umbracoLinkPlugin()
+	umbracoLinkPlugin(),
 ]
 
-const userPlugins = window.maximumMarkdown?.plugins ?? [];
-
-export const plugins = corePlugins.concat(userPlugins);
+export const plugins = corePlugins;
