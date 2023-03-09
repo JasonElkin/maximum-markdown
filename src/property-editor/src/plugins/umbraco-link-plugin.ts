@@ -1,9 +1,12 @@
 import { BytemdPlugin } from "bytemd"
 import { LinkPicker } from "../umbraco/link-picker"
+import { remarkAttrs } from "./remark-attrs"
+
 import { getShortcutWithPrefix } from "./util"
 
 export default function umbracoLinkPlugin(): BytemdPlugin {
 	return {
+		remark: (processor) => processor.use(remarkAttrs),
 		actions: [
 			{
 				title: 'Umbraco Link',
@@ -13,17 +16,21 @@ export default function umbracoLinkPlugin(): BytemdPlugin {
 							</svg>`,
 				handler: {
 					type: 'action',
-					shortcut: getShortcutWithPrefix('K'),
+					shortcut: getShortcutWithPrefix('U'),
 					async click(ctx) {
 
 						var linkPicker = new LinkPicker(ctx.root)
 						const target = await linkPicker.open()
-
 						if (target !== null) {
+
+							let udiAttr = target.udi ? `{data-umb-udi=${target.udi}}` : '';
+							let url = target.url ?? 'url';
+							let linkText = target.name ?? 'link';
+
 							if (ctx.editor.getSelection().length > 0) {
-								ctx.wrapText('[', `](${target.url})`)
+								ctx.wrapText('[', `](${url})` + udiAttr)
 							} else {
-								ctx.appendBlock(`[${target.name ?? 'link'}](${target.url ?? 'url'})`)
+								ctx.appendBlock(`[${linkText}](${url})` + udiAttr)
 							}
 							ctx.editor.focus()
 						}

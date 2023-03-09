@@ -11,6 +11,7 @@ import { customElement, query } from 'lit/decorators.js'
 import { Editor } from 'bytemd'
 import { plugins } from './plugins/plugins';
 import { UmbracoPropertyEditor } from './umbraco-property-editor';
+import { Schema } from 'hast-util-sanitize'
 
 const contentWrapper = document.getElementById('contentwrapper');
 
@@ -51,6 +52,11 @@ export class MaximumMarkdownEditor extends UmbracoPropertyEditor {
 			props: {
 				value: this.value,
 				plugins,
+				sanitize: (schema: Schema) => {
+					// @ts-ignore
+					schema.attributes.a.push('dataUmbUdi')
+					return schema;
+				}
 			},
 		});
 		// @ts-ignore
