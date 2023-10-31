@@ -17,7 +17,6 @@ export class LinkPicker extends Picker {
 			const linkPicker = {
 				hideTarget: true,
 				submit: (model: ILinkPickerModel) => {
-					console.log(model.target)
 					resolve(model.target ?? null);
 					this._editorService.close();
 				},

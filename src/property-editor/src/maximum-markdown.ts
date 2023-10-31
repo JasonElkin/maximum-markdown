@@ -1,4 +1,3 @@
-import './styles/global.css'
 // tippy doesn't use the shadow DOM
 import 'tippy.js/dist/tippy.css'
 
@@ -10,32 +9,30 @@ import { customElement, query } from 'lit/decorators.js'
 
 import { Editor } from 'bytemd'
 import { plugins } from './plugins/plugins';
-import { UmbracoPropertyEditor } from './umbraco-property-editor';
+
+import { UmbracoPropertyEditor } from './umbraco/umbraco-property-editor';
+import { disableDigitShortcuts } from './umbraco/single-key-shortcut-disabler'
+
 import { Schema } from 'hast-util-sanitize'
+import IMarkdownPropertyValue from './markdown-property-value'
 
 const contentWrapper = document.getElementById('contentwrapper');
 
-const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-
 @customElement('maximum-markdown-editor')
-export class MaximumMarkdownEditor extends UmbracoPropertyEditor {
+export class MaximumMarkdownEditor extends UmbracoPropertyEditor<IMarkdownPropertyValue> {
 	constructor() {
 		super();
-		this.addEventListener('keydown', (e) => {
-			if (e.ctrlKey === e.metaKey === e.altKey === false && e.key in digits) {
-				e.stopPropagation();
-			}
-		})
+		disableDigitShortcuts(this);
 	}
 
 	@query('#editor')
 	private _editor!: HTMLDivElement;
 
-	private observer = new MutationObserver((m) => {
+	private fullScreenObserver = new MutationObserver((m) => {
 		if ((<HTMLDivElement>m[0].target).classList.contains('bytemd-fullscreen')) {
-			contentWrapper?.classList.add('bytemd-fullscreen')
+			contentWrapper?.style.setProperty('z-index', '1100')
 		} else {
-			contentWrapper?.classList.remove('bytemd-fullscreen')
+			contentWrapper?.style.removeProperty('z-index')
 		}
 	});
 
@@ -46,32 +43,27 @@ export class MaximumMarkdownEditor extends UmbracoPropertyEditor {
 	}
 
 	updated() {
-		// @ts-ignore
 		const editor = new Editor({
 			target: this._editor,
 			props: {
-				value: this.value,
+				value: this.value?.markdown ?? '',
 				plugins,
 				sanitize: (schema: Schema) => {
-					// @ts-ignore
-					schema.attributes.a.push('dataUmbUdi')
+					schema.attributes?.a.push('dataUmbUdi')
 					return schema;
 				}
 			},
 		});
-		// @ts-ignore
 		editor.$on('change', (e) => {
-			// @ts-ignore
 			editor.$set({ value: e.detail.value })
-			this.value = e.detail.value;
+			this.value = { markdown: e.detail.value }
 		})
 
-		this.observer.observe(this._editor.firstChild!, { attributeFilter: ['class'] });
+		this.fullScreenObserver.observe(this._editor.firstChild!, { attributeFilter: ['class'] });
 	}
 
 	disconnectedCallback() {
-		// Not sure if this is necessary
-		this.observer.disconnect()
+		this.fullScreenObserver.disconnect()
 	}
 
 	static styles = [

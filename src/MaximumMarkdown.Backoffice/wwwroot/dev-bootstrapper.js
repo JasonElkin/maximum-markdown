@@ -1,5 +1,5 @@
-loadModule("/@vite/client");
-loadModule("/src/maximum-markdown.ts");
+loadModule("https://localhost:5173/@vite/client");
+loadModule("https://localhost:5173/src/maximum-markdown.ts");
 
 function loadModule(url) {
 	if (document.querySelector(`script[href="${url}"]`)) {
