@@ -10,7 +10,7 @@ export default defineConfig({
 		emptyOutDir: true,
 		rollupOptions: {
 			input: {
-				main: 'src/maximum-markdown.ts'
+				main: 'src/main.ts'
 			},
 			output: {
 				entryFileNames: `[name].js`,
